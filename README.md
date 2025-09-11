@@ -1,1 +1,7 @@
-This is a Python preparation repository.
+# <div align="center"> PYTHON GUIDE </div>
+
+## INDEX
+
+- [BASICS OF PYTHON](#introduction)
+  - [VARIABLES](basics/variables.md)
+  - [DATA TYPES](#data-types)
