@@ -38,3 +38,9 @@ x = 5                        # Single assignment
 y, z = 10, 15                # Multiple assignment
 a,b,c = "A", "B", 123        # Multiple assignment with different data types
 ```
+
+<br>
+
+---
+
+[NEXT: DATA TYPES &emsp; >](data-types.md)
