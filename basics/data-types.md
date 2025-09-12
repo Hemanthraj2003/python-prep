@@ -92,7 +92,10 @@ print(type(num))  # Output: <class 'int'>
 \
 [BYTES](../datatypes/bytes.md)
 \
-\
-[TYPE CASTING](../datatypes/type-casting.md)
+<br>
 
 ---
+
+[NEXT - TYPE CASTING](../datatypes/type-casting.md)
+
+<br>
