@@ -4,4 +4,4 @@
 
 - [BASICS OF PYTHON](#introduction)
   - [VARIABLES](basics/variables.md)
-  - [DATA TYPES](#data-types)
+  - [DATA TYPES](basics/data-types.md)
