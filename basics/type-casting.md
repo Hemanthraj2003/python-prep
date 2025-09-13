@@ -1,8 +1,17 @@
 # TYPE CASTING
 
 - We can convert one data type to another data type using type casting.
+
 - Python provides several built-in types for type casting.
+
+- Type casting can be implicit or explicit.
+
+  - Implicit: Automatically done by Python (e.g., int to float).
+
+  - Explicit: Manually done by the programmer using built-in functions.
+
 - Common type casting include:
+
   - `int()`: Converts a value to an integer.
   - `float()`: Converts a value to a float.
   - `str()`: Converts a value to a string.
@@ -10,6 +19,7 @@
   - `tuple()`: Converts a value to a tuple.
   - `set()`: Converts a value to a set.
   - `dict()`: Converts a value to a dictionary.
+  - `bool()`: Converts a value to a boolean.
 
 built-in types are basically a class and the values are passed to the constructor and new object of its type is returned.
 
@@ -118,3 +128,47 @@ b = float(a) # we pass a to float classes constructor
 ## `dict()`
 
 - Converts a value to a dictionary.
+
+| Input Value               | Expression                      | Output             | Description                                    |
+| ------------------------- | ------------------------------- | ------------------ | ---------------------------------------------- |
+| `[("a", 1), ("b", 2)]`    | `dict([("a", 1), ("b", 2)])`    | `{'a': 1, 'b': 2}` | List of tuples to dictionary                   |
+| `[["a", 1], ["b", 2]]`    | `dict([["a", 1], ["b", 2]])`    | `{'a': 1, 'b': 2}` | List of lists to dictionary                    |
+| `(("a", 1), ("b", 2))`    | `dict((("a", 1), ("b", 2)))`    | `{'a': 1, 'b': 2}` | Tuple of tuples to dictionary                  |
+| `{"a": 1, "b": 2}`        | `dict({"a": 1, "b": 2})`        | `{'a': 1, 'b': 2}` | Dictionary to dictionary                       |
+| `123`                     | `dict(123)`                     | `TypeError`        | Cannot convert integer to dictionary           |
+| `None`                    | `dict(None)`                    | `TypeError`        | Cannot convert NoneType to dictionary          |
+| `"abc"`                   | `dict("abc")`                   | `TypeError`        | Cannot convert string to dictionary            |
+| `{1, 2, 3}`               | `dict({1, 2, 3})`               | `TypeError`        | Cannot convert set to dictionary               |
+| `[1, 2, 3]`               | `dict([1, 2, 3])`               | `TypeError`        | Cannot convert list of non-pairs to dictionary |
+| `[(1, 2, 3)]`             | `dict([(1, 2, 3)])`             | `ValueError`       | Each item must be a pair (2 elements)          |
+| `[(1, 2), (3, 4, 5)]`     | `dict([(1, 2), (3, 4, 5)])`     | `ValueError`       | Each item must be a pair (2 elements)          |
+| `[("a", 1), ("b")]`       | `dict([("a", 1), ("b")])`       | `ValueError`       | Each item must be a pair (2 elements)          |
+| `[("a", 1), ("b", 2, 3)]` | `dict([("a", 1), ("b", 2, 3)])` | `ValueError`       | Each item must be a pair (2 elements)          |
+
+**Note:** The input must be an iterable of key-value pairs (tuples or lists of length 2) to be converted to a dictionary.
+
+## `bool()`
+
+- Converts a value to a boolean.
+
+| Input Value | Expression        | Output  | Description                  |
+| ----------- | ----------------- | ------- | ---------------------------- |
+| `0`         | `bool(0)`         | `False` | Integer zero is False        |
+| `1`         | `bool(1)`         | `True`  | Non-zero integer is True     |
+| `3`         | `bool(3)`         | `True`  | Non-zero integer is True     |
+| `0.0`       | `bool(0.0)`       | `False` | Float zero is False          |
+| `3.14`      | `bool(3.14)`      | `True`  | Non-zero float is True       |
+| `""`        | `bool("")`        | `False` | Empty string is False        |
+| `"hello"`   | `bool("hello")`   | `True`  | Non-empty string is True     |
+| `[]`        | `bool([])`        | `False` | Empty list is False          |
+| `[1, 2, 3]` | `bool([1, 2, 3])` | `True`  | Non-empty list is True       |
+| `()`        | `bool(())`        | `False` | Empty tuple is False         |
+| `(1, 2)`    | `bool((1, 2))`    | `True`  | Non-empty tuple is True      |
+| `{}`        | `bool({})`        | `False` | Empty dictionary is False    |
+| `{"a": 1}`  | `bool({"a": 1})`  | `True`  | Non-empty dictionary is True |
+| `None`      | `bool(None)`      | `False` | NoneType is always False     |
+| `set()`     | `bool(set())`     | `False` | Empty set is False           |
+| `{1, 2}`    | `bool({1, 2})`    | `True`  | Non-empty set is True        |
+| `object()`  | `bool(object())`  | `True`  | Any object instance is True  |
+
+**Note:** In Python, the following values are considered `False` in a boolean context: `0`, `0.0`, `""` (empty string), `[]` (empty list), `()` (empty tuple), `{}` (empty dictionary), `set()` (empty set), and `None`. All other values are considered `True`.

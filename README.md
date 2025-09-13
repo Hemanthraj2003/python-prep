@@ -10,6 +10,8 @@
 
   - [TYPE CASTING](basics/type-casting.md)
 
+  - [OPERATORS](basics/operators.md)
+
 - [ADVANCED CONCEPTS](README.md)
 
   - [FILE HANDLING](advancedConcepts/file-handling.md)
