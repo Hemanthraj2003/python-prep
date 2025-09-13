@@ -55,9 +55,9 @@ file_object = open("file_path", "mode")
 - if the file is not present, it creates a new file. If the file is present, it overrides the existing data.
 - we have 2 methods to write data to a file.
 
-  1. `write()` - writes a string to the file.
+1. `write()` - writes a string to the file.
 
-  2. `writelines()` - writes a list of strings to the file.
+2. `writelines()` - writes a list of strings to the file.
 
 ```python
 # Example of write mode
@@ -82,66 +82,68 @@ This is line 2.
 
 - if the file is not present, it raises an error.
 
-- we have 4 methods to read data from a file.
+- we have 4 methods to read data from a file
 
-  1. `read()` - returns the entire content of the file.
+<br>
 
-  ```python
-  # Example of read mode
-  file = open("example.txt", "r")
-  content = file.read()
-  print(content)
-  file.close()
-  ```
+1.`read()` - returns the entire content of the file.
 
-  2.`read(n)` - return n characters from the file.
+```python
+# Example of read mode
+file = open("example.txt", "r")
+content = file.read()
+print(content)
+file.close()
+```
 
-  ```python
-  # Example of read mode with n characters
-  file = open("example.txt", "r")
-  content = file.read(5)  # Read first 5 characters
-  print(content)
-  file.close()
-  # Output: Hello
-  ```
+2.`read(n)` - return n characters from the file.
 
-  3.`readline()` - returns a single line from the file from where the cursor is currently positioned.
+```python
+# Example of read mode with n characters
+file = open("example.txt", "r")
+content = file.read(5)  # Read first 5 characters
+print(content)
+file.close()
+# Output: Hello
+```
 
-  ```python
-  # Example of readline
-  file = open("example.txt", "r")
-  line1 = file.readline()  # Read first line
-  line2 = file.readline()  # Read second line
-  print(line1)
-  print(line2)
-  file.close()
-  # Output:
-  # Hello, World!
-  # This is line 1.
-  ```
+3.`readline()` - returns a single line from the file from where the cursor is currently positioned.
 
-  4.`readlines()` - returns a list of lines from the file.
+```python
+# Example of readline
+file = open("example.txt", "r")
+line1 = file.readline()  # Read first line
+line2 = file.readline()  # Read second line
+print(line1)
+print(line2)
+file.close()
+# Output:
+# Hello, World!
+# This is line 1.
+```
 
-  ```python
-  # Example of readlines
-  file = open("example.txt", "r")
-  lines = file.readlines()
-  print(lines)
-  file.close()
-  # Output: ['Hello, World!\n', 'This is line 1.\n', 'This is line 2.\n']
-  ```
+4.`readlines()` - returns a list of lines from the file.
+
+```python
+# Example of readlines
+file = open("example.txt", "r")
+lines = file.readlines()
+print(lines)
+file.close()
+# Output: ['Hello, World!\n', 'This is line 1.\n', 'This is line 2.\n']
+```
 
 - `cursor` - is a pointer which points to the current position in the file.
 
-- cursor methods:
+cursor methods:
 
-  1. `tell()` - returns the current position of the cursor.
+1. `tell()` - returns the current position of the cursor.
 
-  2. `seek(offset, whence)` - moves the cursor to a new position.
+2. `seek(offset, whence)` - moves the cursor to a new position.
 
-  - `offset` - number of bytes to move the cursor.
+- `offset` - number of bytes to move the cursor.
 
-  - `whence` - reference point from where to move the cursor.
+- `whence` - reference point from where to move the cursor.
 
 | whence | Description                     |
 | ------ | ------------------------------- |
