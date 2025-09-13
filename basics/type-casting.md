@@ -63,3 +63,58 @@ b = float(a) # we pass a to float classes constructor
 | `[1, 2, 3]` | `str([1, 2, 3])` | `"[1, 2, 3]"` | List to string    |
 
 **Note:** Every value can be converted to a string.
+
+## `list()`
+
+- Converts a value to a list.
+
+| Input Value        | Expression                        | Output                      | Description                     |
+| ------------------ | --------------------------------- | --------------------------- | ------------------------------- |
+| `"hello"`          | `list("hello")`                   | `['h', 'e', 'l', 'l', 'o']` | String to list of characters    |
+| `(1, 2, 3)`        | `list((1, 2, 3))`                 | `[1, 2, 3]`                 | Tuple to list                   |
+| `{1, 2, 3}`        | `list({1, 2, 3})`                 | `[1, 2, 3]`                 | Set to list                     |
+| `[1, 2, 3]`        | `list([1, 2, 3])`                 | `[1, 2, 3]`                 | List to list                    |
+| `123`              | `list(123)`                       | `TypeError`                 | Cannot convert integer to list  |
+| `None`             | `list(None)`                      | `TypeError`                 | Cannot convert NoneType to list |
+| `{"a": 1, "b": 2}` | `list({"a": 1, "b": 2})`          | `['a', 'b']`                | Dictionary to list of keys      |
+| `{"a": 1, "b": 2}` | `list({"a": 1, "b": 2}.values())` | `[1, 2]`                    | Dictionary to list of values    |
+
+**Note:** Only iterable types can be converted to a list.
+
+## `tuple()`
+
+- Converts a value to a tuple.
+
+| Input Value        | Expression                         | Output                      | Description                      |
+| ------------------ | ---------------------------------- | --------------------------- | -------------------------------- |
+| `"hello"`          | `tuple("hello")`                   | `('h', 'e', 'l', 'l', 'o')` | String to tuple of characters    |
+| `[1, 2, 3]`        | `tuple([1, 2, 3])`                 | `(1, 2, 3)`                 | List to tuple                    |
+| `{1, 2, 3}`        | `tuple({1, 2, 3})`                 | `(1, 2, 3)`                 | Set to tuple                     |
+| `(1, 2, 3)`        | `tuple((1, 2, 3))`                 | `(1, 2, 3)`                 | Tuple to tuple                   |
+| `123`              | `tuple(123)`                       | `TypeError`                 | Cannot convert integer to tuple  |
+| `None`             | `tuple(None)`                      | `TypeError`                 | Cannot convert NoneType to tuple |
+| `{"a": 1, "b": 2}` | `tuple({"a": 1, "b": 2})`          | `('a', 'b')`                | Dictionary to tuple of keys      |
+| `{"a": 1, "b": 2}` | `tuple({"a": 1, "b": 2}.values())` | `(1, 2)`                    | Dictionary to tuple of values    |
+
+**Note:** Only iterable types can be converted to a tuple.
+
+## `set()`
+
+- Converts a value to a set.
+
+| Input Value        | Expression                       | Output                 | Description                       |
+| ------------------ | -------------------------------- | ---------------------- | --------------------------------- |
+| `"hello"`          | `set("hello")`                   | `{'h', 'e', 'l', 'o'}` | String to set of characters       |
+| `[1, 2, 2, 3]`     | `set([1, 2, 2, 3])`              | `{1, 2, 3}`            | List to set (removes duplicates)  |
+| `(1, 2, 2, 3)`     | `set((1, 2, 2, 3))`              | `{1, 2, 3}`            | Tuple to set (removes duplicates) |
+| `{1, 2, 3}`        | `set({1, 2, 3})`                 | `{1, 2, 3}`            | Set to set                        |
+| `123`              | `set(123)`                       | `TypeError`            | Cannot convert integer to set     |
+| `None`             | `set(None)`                      | `TypeError`            | Cannot convert NoneType to set    |
+| `{"a": 1, "b": 2}` | `set({"a": 1, "b": 2})`          | `{'a', 'b'}`           | Dictionary to set of keys         |
+| `{"a": 1, "b": 2}` | `set({"a": 1, "b": 2}.values())` | `{1, 2}`               | Dictionary to set of values       |
+
+**Note:** Only iterable types can be converted to a set.
+
+## `dict()`
+
+- Converts a value to a dictionary.
