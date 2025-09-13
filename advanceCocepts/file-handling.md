@@ -86,11 +86,50 @@ This is line 2.
 
   1. `read()` - returns the entire content of the file.
 
-  2. `read(n)` - return n characters from the file.
+  ```python
+    # Example of read mode
+    file = open("example.txt", "r")
+    content = file.read()
+    print(content)
+    file.close()
+  ```
 
-  3. `readline()` - returns a single line from the file from where the cursor is currently positioned.
+  2.`read(n)` - return n characters from the file.
 
-  4. `readlines()` - returns a list of lines from the file.
+  ```python
+    # Example of read mode with n characters
+    file = open("example.txt", "r")
+    content = file.read(5)  # Read first 5 characters
+    print(content)
+    file.close()
+    # Output: Hello
+  ```
+
+  3.`readline()` - returns a single line from the file from where the cursor is currently positioned.
+
+  ```python
+  # Example of readline
+  file = open("example.txt", "r")
+  line1 = file.readline()  # Read first line
+  line2 = file.readline()  # Read second line
+  print(line1)
+  print(line2)
+  file.close()
+  # Output:
+  # Hello, World!
+  # This is line 1.
+  ```
+
+  4.`readlines()` - returns a list of lines from the file.
+
+  ```python
+  # Example of readlines
+  file = open("example.txt", "r")
+  lines = file.readlines()
+  print(lines)
+  file.close()
+  # Output: ['Hello, World!\n', 'This is line 1.\n', 'This is line 2.\n']
+  ```
 
 - `cursor` - is a pointer which points to the current position in the file.
 
@@ -109,3 +148,22 @@ This is line 2.
     | 0      | beginning of the file (default) |
     | 1      | current position of the cursor  |
     | 2      | end of the file                 |
+
+    ```python
+    file = open("example.txt", "r")
+    print(file.tell())  # Output: 0
+
+    file.seek(7)
+    print(file.tell()) # Output: 7
+
+    file.seek(3,0) # Move to 3rd byte from beginning
+    print(file.tell()) # Output: 3
+
+    file.seek(2,1) # Move 2 bytes forward from current position
+    print(file.tell()) # Output: 5
+
+    file.seek(-5,2) # Move 5 bytes back from end of file
+    print(file.tell()) # Output: 34
+
+    file.close()
+    ```

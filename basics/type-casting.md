@@ -13,7 +13,7 @@
 
 built-in types are basically a class and the values are passed to the constructor and new object of its type is returned.
 
-**Example**
+## Example
 
 ```python
 a = 5
