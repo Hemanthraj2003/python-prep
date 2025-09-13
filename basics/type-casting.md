@@ -172,3 +172,9 @@ b = float(a) # we pass a to float classes constructor
 | `object()`  | `bool(object())`  | `True`  | Any object instance is True  |
 
 **Note:** In Python, the following values are considered `False` in a boolean context: `0`, `0.0`, `""` (empty string), `[]` (empty list), `()` (empty tuple), `{}` (empty dictionary), `set()` (empty set), and `None`. All other values are considered `True`.
+
+---
+
+[HOME: Index](../README.md)
+
+[NEXT: OPERATORS](operators.md)

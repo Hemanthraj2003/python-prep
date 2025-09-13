@@ -96,6 +96,8 @@ print(type(num))  # Output: <class 'int'>
 
 ---
 
-[NEXT - TYPE CASTING](../datatypes/type-casting.md)
+[HOME: Index](../README.md)
+
+[NEXT - TYPE CASTING](type-casting.md)
 
 <br>

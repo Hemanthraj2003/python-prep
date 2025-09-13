@@ -43,4 +43,6 @@ a,b,c = "A", "B", 123        # Multiple assignment with different data types
 
 ---
 
-[NEXT: DATA TYPES &emsp; >](data-types.md)
+[HOME: Index](../README.md)
+
+[NEXT: DATA TYPES](data-types.md)
