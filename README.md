@@ -12,6 +12,8 @@
 
   - [OPERATORS](basics/operators.md)
 
+  - [CONTROL STATEMENTS](basics/control-statements.md)
+
 - [ADVANCED CONCEPTS](README.md)
 
   - [FILE HANDLING](advancedConcepts/file-handling.md)
