@@ -30,7 +30,7 @@ In python data-types can be classified into the following categories:
 
 ---
 
-### **Numberic Types**
+### **`Numeric Types`**
 
 Numeric types are used to represent numbers in Python.
 
@@ -57,6 +57,28 @@ c= 3 + 4j
 print(type(c))  # Output: <class 'complex'>
 ```
 
+### **`Boolean Type`**
+
+The Boolean type represents one of two values: `True` or `False`. It is often used in conditional statements and logical operations.\
+default value is `False`.
+
+```python
+#Boolean
+is_active = True
+print(type(is_active))  # Output: <class 'bool'>
+```
+
+### **`None Type`**
+
+The `NoneType` represents the absence of a value or a null value. It is commonly used to indicate that a variable has no value assigned to it.\
+default value is `None`.
+
+```python
+#NoneType
+result = None
+print(type(result))  # Output: <class 'NoneType'>
+```
+
 ## Checking Data Type of a Variable
 
 We can check the data type of a variable using the built-in `type()` function.
@@ -66,10 +88,6 @@ We can check the data type of a variable using the built-in `type()` function.
 num = 10
 print(type(num))  # Output: <class 'int'>
 ```
-
-<br>
-<br>
-<br>
 
 ## KEY DATATYPES IN DETAILS
 
@@ -85,19 +103,9 @@ print(type(num))  # Output: <class 'int'>
 \
 \
 [DICTIONARIES](../datatypes/dictionaries.md)
-\
-\
-[BOOLEAN](../datatypes/boolean.md)
-\
-\
-[BYTES](../datatypes/bytes.md)
-\
-<br>
 
 ---
 
 [HOME: Index](../README.md)
 
 [NEXT - TYPE CASTING](type-casting.md)
-
-<br>

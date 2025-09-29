@@ -16,9 +16,9 @@
 
 - CORE CONCEPTS
 
-  - [COLLECTIONS / DATA STRUCTURES](core/collections.md)
-
   - [FUNCTIONS](core/functions.md)
+
+  - [DECORATORS](core/decorators.md)
 
   - [EXCEPTION HANDLING](core/exception-handling.md)
 

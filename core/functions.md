@@ -223,7 +223,11 @@ outer_function("Hello from inner function!")
 # Output: Hello from inner function!
 ```
 
-### `NOTE:`
+## Higher-Order Functions
+
+Higher-order functions are functions that can take other functions as arguments or return functions as their result.
+
+## `NOTE:`
 
 1. we can return anything from a function including other functions.
 
