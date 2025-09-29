@@ -39,7 +39,29 @@ y, z = 10, 15                # Multiple assignment
 a,b,c = "A", "B", 123        # Multiple assignment with different data types
 ```
 
-<br>
+## Scope of Variables
+
+The scope of a variable determines where that variable can be accessed or modified. There are two types of variable scopes in Python:
+
+1. `Local Scope`: Variables defined inside a function are in the local scope and can only be accessed within that function.
+
+   ```python
+   def my_function():
+       x = 10  # local variable
+       print(x)
+   my_function()  # Output: 10
+   # print(x)  # Error: x is not defined outside the function
+   ```
+
+2. `Global Scope`: Variables defined outside of any function are in the global scope and can be accessed from anywhere in the code.
+
+   ```python
+   x = 20  # global variable
+   def my_function():
+       print(x)  # accessing global variable
+   my_function()  # Output: 20
+   print(x)  # Output: 20
+   ```
 
 ---
 
