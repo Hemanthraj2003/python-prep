@@ -2,7 +2,7 @@
 
 ## INDEX
 
-- [BASICS OF PYTHON](README.md)
+- BASICS OF PYTHON
 
   - [VARIABLES](basics/variables.md)
 
@@ -14,12 +14,20 @@
 
   - [CONTROL STATEMENTS](basics/control-statements.md)
 
-- [CORE CONCEPTS](README.md)
+- CORE CONCEPTS
+
+  - [COLLECTIONS / DATA STRUCTURES](core/collections.md)
 
   - [FUNCTIONS](core/functions.md)
 
-- [ADVANCED CONCEPTS](README.md)
+  - [EXCEPTION HANDLING](core/exception-handling.md)
+
+  - [MODULES AND PACKAGES](core/modules-packages.md)
+
+- OOPs CONCEPTS
+
+- ADVANCED CONCEPTS
 
   - [FILE HANDLING](advancedConcepts/file-handling.md)
 
-  - [ITERATORS](advancedConcepts/interator.md)
+  - [ITERATORS](advancedConcepts/iterators.md)
