@@ -24,9 +24,9 @@
 
   - [MODULES AND PACKAGES](core/modules-packages.md)
 
-  - [COLLECTIONS](core/collections.md)
+  - [NAMESPACES AND SCOPE](core/namespaces-scope.md)
 
-- DATA TYPES
+- KEY DATA TYPES
 
   - [LISTS](datatypes/lists.md)
 
@@ -36,9 +36,19 @@
 
   - [DICTIONARIES](datatypes/dicts.md)
 
+  - [RANGE](datatypes/range.md)
+
 - OOPs CONCEPTS
 
   - [CLASSES AND OBJECTS](OOPs/classes-objects.md)
+
+  - [STRING REPRESENTATION](OOPs/string-representation.md)
+
+  - [DUNDER METHODS (MAGIC METHODS)](OOPs/dunder-methods.md)
+
+  - [PROPERTY DECORATORS](OOPs/property-decorators.md)
+
+  - [OBJECT COMPARISON METHODS](OOPs/object-comparison.md)
 
   - [INHERITANCE](OOPs/inheritance.md)
 

@@ -297,143 +297,59 @@ print(person.call_private_method()) # Output: This is a private method
 
 ## `STRING REPRESENTATION METHODS`
 
-Special methods to define how objects are represented as strings:
+For comprehensive coverage of string representation methods including `__str__`, `__repr__`, `__format__`, and advanced formatting techniques, see:
 
-```python
-class Book:
-    def __init__(self, title, author, pages):
-        self.title = title
-        self.author = author
-        self.pages = pages
+**📚 [String Representation Methods](./string-representation.md)**
 
-    def __str__(self):
-        """String representation for end users"""
-        return f"{self.title} by {self.author}"
+This covers:
 
-    def __repr__(self):
-        """String representation for developers (should be unambiguous)"""
-        return f"Book('{self.title}', '{self.author}', {self.pages})"
+- `__str__` vs `__repr__` differences and best practices
+- Custom formatting with `__format__`
+- Integration with f-strings and format() function
+- Real-world examples with Product, Temperature, and Money classes
 
-    def __len__(self):
-        """Define length of object"""
-        return self.pages
+## `COMPREHENSIVE DUNDER METHODS (MAGIC METHODS)`
 
-book = Book("Python Programming", "John Doe", 350)
+For comprehensive coverage of all dunder methods (magic methods) including arithmetic operations, container emulation, context managers, and more, see:
 
-print(str(book))        # Output: Python Programming by John Doe
-print(repr(book))       # Output: Book('Python Programming', 'John Doe', 350)
-print(book)             # Output: Python Programming by John Doe (calls __str__)
-print(len(book))        # Output: 350
+**📚 [Comprehensive Dunder Methods](./dunder-methods.md)**
 
-# In list, __repr__ is used
-books = [book]
-print(books)            # Output: [Book('Python Programming', 'John Doe', 350)]
-```
+This covers:
 
-## `PROPERTY DECORATORS`
+- Arithmetic operations (`__add__`, `__sub__`, `__mul__`, etc.)
+- Comparison methods (`__eq__`, `__lt__`, `__gt__`, etc.)
+- Container emulation (`__len__`, `__getitem__`, `__setitem__`, etc.)
+- Context managers (`__enter__`, `__exit__`)
+- Callable objects (`__call__`)
+- Advanced examples with Vector, Matrix, and custom containers
 
-Properties allow you to access methods like attributes and add validation:
+## `COMPREHENSIVE PROPERTY DECORATORS (GETTER AND SETTER)`
 
-```python
-class Temperature:
-    def __init__(self, celsius=0):
-        self._celsius = celsius
+For comprehensive coverage of property decorators including validation, computed properties, caching, and lazy loading, see:
 
-    @property
-    def celsius(self):
-        """Getter for celsius"""
-        return self._celsius
+**📚 [Property Decorators Guide](./property-decorators.md)**
 
-    @celsius.setter
-    def celsius(self, value):
-        """Setter for celsius with validation"""
-        if value < -273.15:
-            raise ValueError("Temperature cannot be below absolute zero")
-        self._celsius = value
+This covers:
 
-    @property
-    def fahrenheit(self):
-        """Read-only property for fahrenheit"""
-        return self._celsius * 9/5 + 32
-
-    @property
-    def kelvin(self):
-        """Read-only property for kelvin"""
-        return self._celsius + 273.15
-
-temp = Temperature(25)
-
-# Using properties like attributes
-print(temp.celsius)     # Output: 25
-print(temp.fahrenheit)  # Output: 77.0
-print(temp.kelvin)      # Output: 298.15
-
-# Setting temperature with validation
-temp.celsius = 100      # Works fine
-print(temp.fahrenheit)  # Output: 212.0
-
-# This will raise an error
-# temp.celsius = -300   # ValueError: Temperature cannot be below absolute zero
-```
+- Basic property implementation with getter, setter, deleter
+- Complex validation patterns with type checking and business rules
+- Computed properties and read-only attributes
+- Property caching and lazy loading techniques
+- Real-world examples with BankAccount, Person, and DataProcessor classes
 
 ## `OBJECT COMPARISON METHODS`
 
-Special methods for comparing objects:
+For comprehensive coverage of object comparison methods including rich comparisons, sorting, equality testing, and hash consistency, see:
 
-```python
-class Student:
-    def __init__(self, name, grade):
-        self.name = name
-        self.grade = grade
+**📚 [Object Comparison Methods](./object-comparison.md)**
 
-    def __eq__(self, other):
-        """Define equality comparison"""
-        if isinstance(other, Student):
-            return self.grade == other.grade
-        return False
+This covers:
 
-    def __lt__(self, other):
-        """Define less than comparison"""
-        if isinstance(other, Student):
-            return self.grade < other.grade
-        return NotImplemented
-
-    def __le__(self, other):
-        """Define less than or equal comparison"""
-        return self == other or self < other
-
-    def __gt__(self, other):
-        """Define greater than comparison"""
-        if isinstance(other, Student):
-            return self.grade > other.grade
-        return NotImplemented
-
-    def __ge__(self, other):
-        """Define greater than or equal comparison"""
-        return self == other or self > other
-
-    def __str__(self):
-        return f"{self.name} (Grade: {self.grade})"
-
-student1 = Student("Alice", 85)
-student2 = Student("Bob", 92)
-student3 = Student("Charlie", 85)
-
-print(student1 == student3)  # Output: True
-print(student1 < student2)   # Output: True
-print(student2 > student1)   # Output: True
-print(student1 <= student3)  # Output: True
-
-# Sorting students by grade
-students = [student1, student2, student3]
-students.sort()
-for student in students:
-    print(student)
-# Output:
-# Alice (Grade: 85)
-# Charlie (Grade: 85)
-# Bob (Grade: 92)
-```
+- Rich comparison methods (`__eq__`, `__lt__`, `__gt__`, `__le__`, `__ge__`, `__ne__`)
+- Multi-criteria comparison strategies and sorting patterns
+- Hash consistency and use in sets/dictionaries
+- Comparison with type flexibility and tolerance
+- Advanced patterns with inheritance and performance optimization
 
 ## `PRACTICAL EXAMPLES`
 
