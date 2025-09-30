@@ -1,11 +1,13 @@
 # GENERATORS
 
 ## Definition
+
 Generators are a special type of iterator that generate values on-the-fly (lazy evaluation) instead of storing them in memory all at once. They are defined using functions with the `yield` keyword.
 
 ## Key Concepts
 
 ### 1. Generator Functions
+
 - Functions that contain at least one `yield` statement
 - Return a generator object when called
 - Execution is paused at `yield` and resumed when `next()` is called
@@ -23,6 +25,7 @@ print(next(gen))  # 3
 ```
 
 ### 2. Generator Expressions
+
 - Similar to list comprehensions but use parentheses
 - More memory efficient for large datasets
 
@@ -38,6 +41,7 @@ list_comp = [x**2 for x in range(5)]  # Creates entire list in memory
 ### 3. Practical Examples
 
 #### Fibonacci Generator
+
 ```python
 def fibonacci_generator(n):
     a, b = 0, 1
@@ -54,6 +58,7 @@ for num in fib:
 ```
 
 #### File Reading Generator
+
 ```python
 def read_large_file(file_path):
     with open(file_path, 'r') as file:
@@ -66,6 +71,7 @@ for line in read_large_file('large_file.txt'):
 ```
 
 #### Range Generator (Custom Implementation)
+
 ```python
 def custom_range(start, end, step=1):
     current = start
@@ -81,6 +87,7 @@ for i in custom_range(0, 10, 2):
 ### 4. Generator Methods
 
 #### send() Method
+
 ```python
 def generator_with_send():
     value = yield "Ready"
@@ -94,6 +101,7 @@ print(gen.send("World"))  # Received: World
 ```
 
 #### throw() and close() Methods
+
 ```python
 def robust_generator():
     try:
@@ -115,6 +123,7 @@ gen.close()
 ### 5. Advanced Patterns
 
 #### Generator Pipeline
+
 ```python
 def numbers():
     for i in range(10):
@@ -135,6 +144,7 @@ print(list(pipeline))  # [0, 4, 16, 36, 64]
 ```
 
 #### Infinite Generator
+
 ```python
 def infinite_counter(start=0):
     while True:
@@ -165,11 +175,13 @@ print(f"Generator size: {sys.getsizeof(numbers_gen)} bytes")
 ### Common Interview Questions
 
 1. **"What's the difference between a generator and a regular function?"**
+
    - Regular functions return values and terminate
    - Generators yield values and can be resumed
    - Generators maintain state between calls
 
 2. **"When would you use generators over lists?"**
+
    - Large datasets that don't fit in memory
    - Infinite sequences
    - Processing streams of data
@@ -249,6 +261,7 @@ for value in gen:
 6. Consider using `itertools` module for advanced generator patterns
 
 ## Related Concepts
+
 - Iterators and the Iterator Protocol
 - List Comprehensions
 - Memory Management

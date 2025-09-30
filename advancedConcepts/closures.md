@@ -14,7 +14,7 @@ def outer_function(x):
     def inner_function(y):
         # Inner function has access to 'x' from outer scope
         return x + y
-    
+
     return inner_function  # Return the inner function
 
 # Create a closure
@@ -53,12 +53,12 @@ print(triple.__closure__[0].cell_contents)  # 3
 ```python
 def make_counter():
     count = 0
-    
+
     def counter():
         nonlocal count
         count += 1
         return count
-    
+
     return counter
 
 # Each counter maintains its own state
@@ -76,17 +76,17 @@ print(counter1())  # 3
 ```python
 def create_config_handler(config_name):
     settings = {}
-    
+
     def set_setting(key, value):
         settings[key] = value
         print(f"[{config_name}] Set {key} = {value}")
-    
+
     def get_setting(key):
         return settings.get(key, f"Setting '{key}' not found")
-    
+
     def get_all_settings():
         return settings.copy()
-    
+
     # Return multiple functions that share the same closure
     return set_setting, get_setting, get_all_settings
 
@@ -109,30 +109,30 @@ print(db_all())           # {'host': 'localhost', 'port': 5432}
 def create_event_handler(event_type):
     call_count = 0
     handlers = []
-    
+
     def add_handler(func):
         handlers.append(func)
         return func
-    
+
     def trigger_event(*args, **kwargs):
         nonlocal call_count
         call_count += 1
         results = []
-        
+
         print(f"Triggering {event_type} event (call #{call_count})")
         for handler in handlers:
             result = handler(*args, **kwargs)
             results.append(result)
-        
+
         return results
-    
+
     def get_stats():
         return {
             'event_type': event_type,
             'call_count': call_count,
             'handler_count': len(handlers)
         }
-    
+
     return add_handler, trigger_event, get_stats
 
 # Usage
@@ -170,12 +170,12 @@ def create_validator(min_val, max_val, data_type=int):
                 return False, f"Value must be between {min_val} and {max_val}"
         except (ValueError, TypeError):
             return False, f"Value must be of type {data_type.__name__}"
-    
+
     # Add metadata to the closure
     validate.min_val = min_val
     validate.max_val = max_val
     validate.data_type = data_type
-    
+
     return validate
 
 # Create different validators
@@ -192,32 +192,32 @@ print(percentage_validator("85.5"))  # (True, 85.5)
 ```python
 def memoize():
     cache = {}
-    
+
     def decorator(func):
         def wrapper(*args):
             if args in cache:
                 print(f"Cache hit for {func.__name__}{args}")
                 return cache[args]
-            
+
             print(f"Computing {func.__name__}{args}")
             result = func(*args)
             cache[args] = result
             return result
-        
+
         def clear_cache():
             cache.clear()
             print(f"Cache cleared for {func.__name__}")
-        
+
         def cache_info():
             return {
                 'size': len(cache),
                 'keys': list(cache.keys())
             }
-        
+
         wrapper.clear_cache = clear_cache
         wrapper.cache_info = cache_info
         return wrapper
-    
+
     return decorator
 
 @memoize()
@@ -238,12 +238,12 @@ print(fibonacci.cache_info())
 # Using Closure
 def make_account_closure(initial_balance):
     balance = initial_balance
-    
+
     def deposit(amount):
         nonlocal balance
         balance += amount
         return balance
-    
+
     def withdraw(amount):
         nonlocal balance
         if amount <= balance:
@@ -251,28 +251,28 @@ def make_account_closure(initial_balance):
             return balance
         else:
             raise ValueError("Insufficient funds")
-    
+
     def get_balance():
         return balance
-    
+
     return deposit, withdraw, get_balance
 
 # Using Class
 class Account:
     def __init__(self, initial_balance):
         self.balance = initial_balance
-    
+
     def deposit(self, amount):
         self.balance += amount
         return self.balance
-    
+
     def withdraw(self, amount):
         if amount <= self.balance:
             self.balance -= amount
             return self.balance
         else:
             raise ValueError("Insufficient funds")
-    
+
     def get_balance(self):
         return self.balance
 
@@ -325,10 +325,10 @@ for func in functions_fixed2:
 ```python
 def potential_memory_leak():
     large_data = list(range(1000000))  # Large list
-    
+
     def small_function():
         return "Hello"  # Doesn't use large_data
-    
+
     return small_function
 
 # The closure keeps reference to large_data even though it's not used
@@ -338,10 +338,10 @@ func = potential_memory_leak()
 def memory_efficient():
     large_data = list(range(1000000))
     needed_value = large_data[0]  # Extract only what's needed
-    
+
     def small_function():
         return f"First value: {needed_value}"
-    
+
     return small_function
 ```
 
@@ -350,11 +350,13 @@ def memory_efficient():
 ### Common Interview Questions
 
 1. **"What is a closure and how does it work?"**
+
    - A function that retains access to variables from its enclosing scope
    - Variables are captured by reference, not by value
    - Enables data encapsulation and state preservation
 
 2. **"What's the difference between closures and classes?"**
+
    - Closures: Functional approach, implicit state, simpler for single responsibility
    - Classes: Object-oriented approach, explicit state, better for complex objects
 
@@ -374,19 +376,19 @@ def timing_closure():
     def decorator(func):
         call_count = 0
         total_time = 0
-        
+
         @wraps(func)
         def wrapper(*args, **kwargs):
             nonlocal call_count, total_time
             start = time.time()
             result = func(*args, **kwargs)
             execution_time = time.time() - start
-            
+
             call_count += 1
             total_time += execution_time
-            
+
             return result
-        
+
         def get_stats():
             avg_time = total_time / call_count if call_count > 0 else 0
             return {
@@ -394,10 +396,10 @@ def timing_closure():
                 'total_time': total_time,
                 'avg_time': avg_time
             }
-        
+
         wrapper.get_stats = get_stats
         return wrapper
-    
+
     return decorator
 
 @timing_closure()
