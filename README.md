@@ -38,6 +38,16 @@
 
 - OOPs CONCEPTS
 
+  - [CLASSES AND OBJECTS](OOPs/classes-objects.md)
+
+  - [INHERITANCE](OOPs/inheritance.md)
+
+  - [POLYMORPHISM](OOPs/polymorphism.md)
+
+  - [ENCAPSULATION](OOPs/encapsulation.md)
+
+  - [ABSTRACTION](OOPs/abstraction.md)
+
 - ADVANCED CONCEPTS
 
   - [FILE HANDLING](advancedConcepts/file-handling.md)
