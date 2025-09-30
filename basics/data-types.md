@@ -102,7 +102,7 @@ print(type(num))  # Output: <class 'int'>
 [SETS](../datatypes/sets.md)
 \
 \
-[DICTIONARIES](../datatypes/dictionaries.md)
+[DICTIONARIES](../datatypes/dicts.md)
 
 ---
 
