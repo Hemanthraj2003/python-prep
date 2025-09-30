@@ -24,6 +24,18 @@
 
   - [MODULES AND PACKAGES](core/modules-packages.md)
 
+  - [COLLECTIONS](core/collections.md)
+
+- DATA TYPES
+
+  - [LISTS](datatypes/lists.md)
+
+  - [TUPLES](datatypes/tuples.md)
+
+  - [SETS](datatypes/sets.md)
+
+  - [DICTIONARIES](datatypes/dicts.md)
+
 - OOPs CONCEPTS
 
 - ADVANCED CONCEPTS
@@ -31,3 +43,5 @@
   - [FILE HANDLING](advancedConcepts/file-handling.md)
 
   - [ITERATORS](advancedConcepts/iterators.md)
+
+  - [COMPREHENSIONS](advancedConcepts/comprehensions.md)
